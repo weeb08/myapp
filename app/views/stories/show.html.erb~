@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="main">
+	<h1><%=@story.name%></h1>
+	<p>Basketball Analytics Insider</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+	<div class="button"><p><%= link_to 'Edit Story', :action => :edit %></p></div>
+</div>
+
+
+<table id="t01" align="center">
+<td>
+<%= image_tag(@story.thumburl) %>
+</td>
+</table>
+
+<div class="text">
+<div class="col-lg-3"></div>
+<div class="col-lg-6">
+<p><%= @story.summary %></p>
+</div>
+<div class="col-lg-3"></div>
+</div>
+
+<div class="col-lg-7"></div>
+<div class="col-lg-2">
+<p> basketballanalytics.com </p>
+</div>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="main">
+	<h1><%=@team.name%></h1>
+	<p> Team & Player Analytics </p>
+	<%= image_tag(@team.thumburl, :size => "234x156") %>
+	<div class="button"><p><%= link_to 'Edit Team', :action => :edit %></p></div>
+</div>
+
+
+<div class="team-rank">
+ <div class="col-lg-1"></div>
+ <div class="col-lg-2">
+
+   <p><b>MPG = Minutes per Game</b></p>
+   <p><b>PPG = Points per Game</b></p>
+   <p><b>+/- = Plus/Minus</b>, averages the points scored versus points scored against for the entire season while that player was on the court</p>
+   <p><b>TS% = True Shooting Percentage</b>, what a player's shooting percentage would be if we acconted for free throws and 3-pointers.  TS% = Total Points / [(FGA + (0.44 x FTA)]</p>
+   <p><b>PER = Player Efficiency Rating</b>, overall rating of a player's per-minute statistical production.  The league average is 15.00 every season.</p>
+   <p><b>VA = Value Added</b>, estimated number of points a player adds to a team's season total above what a 'replacement player' would produce.  VA = ([Minutes * (PER - PRL)] / 67).  PRL (Position Replacement Level) = 11.5 for power forwards, 11.0 for point guards, 10.6 for centers, 10.5 for shooting guards and small forwards.</p>
+   <p><b>EWA = Estimated Wins Added</b>, Value Added divided by 30, giving the estimated number of wins a player adds to a team's season total above what a 'replacement player' would produce.</p>
+   <p><b>USG = Usage Rate</b>, the number of possessions a player uses per 40 minutes.  USG = {[FGA + FT Att. x 0.44) + (Ast x 0.33) + TO] x 40 x League Pace} divided by (Minutes x Team Pace)</p>
+ </div>
+
+ <div class="col-lg-1"></div>
+ 
+ <div class="col-lg-7">
+ 
+  <table style="width:100%" table align="center">
+
+	<caption>Statistics Ranks out of all 30 teams</caption>
+		<tr>
+		<th> 2015 Record </th>
+		<th> PPG </th>
+		<th> PPGA </th>
+		<th> +/- </th>
+		<th> FG% </th>
+		<th> 3P% </th>
+		<th> 3P Att</th>
+		<th> FT% </th>
+		<th> FT Att </th>
+		<th> REB </th>
+		<th> AST</th>	
+		<th> TOV </th>
+		<th> STL+BLK </th>
+		<th> PPS </th>
+		<th> TS% </th>
+		</tr>
+
+		<tr>
+		<td><%= @team.win_loss%></td>
+		<td><%= @team.ppg_rank%></td>
+		<td><%= @team.ppga_rank %></td>
+		<td><%= @team.plus_minus_rank %></td>
+		<td><%= @team.fg_percent_rank %></td>
+		<td><%= @team.three_pfg_percent_rank %></td>
+		<td><%= @team.three_pa_rank%></td>
+		<td><%= @team.ft_percent_rank %></td>
+		<td><%= @team.fta_rank %></td>
+		<td><%= @team.reb_rank %></td>
+		<td><%= @team.ast_rank %></td>
+		<td><%= @team.tov_rank %></td>
+		<td><%= @team.stlblk_rank %></td>
+		<td><%= @team.pps_rank %></td>
+		<td><%= @team.ts_percent_rank %></td>
+		</tr>
+  </table>
+
+
+
+<table border="1" style="width:100%" table align="center">
+	<caption>Roster</caption>
+		<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>GP</th>
+		<th>MPG</th>	
+		<th>PPG</th>	
+		<th>FG%</th>
+		<th>3P%</th>
+		<th>REB</th>
+		<th>AST</th>
+		<th>STL</th>
+		<th>BLK</th>
+
+		</tr>
+
+	<% @players.each do |f| %>
+		<tr>
+		<td><%= link_to(f.name, player_path(f))  %></td>
+		<td><%= f.age %></td>
+		<td><%= f.gp %></td>
+		<td><%= f.min %></td>
+		<td><%= f.pts %></td>
+		<td><%= f.fg_percent %></td>
+		<td><%= f.three_p_percent %></td>
+		<td><%= f.reb %></td>
+		<td><%= f.ast%></td>
+		<td><%= f.stl %></td>
+		<td><%= f.blk %></td>
+	<% end %>
+		</tr>
+</table>
+
+<table border="1" style="width:100%" table align="center">
+
+		<tr>
+		<th></th>
+		<th>PTS/36</th>
+		<th>PPS</th>
+		<th>TS%</th>	
+		<th>AST ratio</th>	
+		<th>TO ratio</th>
+		<th>USG</th>
+		<th>REB rate</th>
+		<th>PER</th>
+		<th>VA</th>
+		<th>EWA</th>
+
+		</tr>
+
+	<% @players.each do |x| %>
+		<tr>
+		<td><%= link_to(x.name, player_path(x))  %></td>
+		<td><%= x.pts_thirty_six %></td>
+		<td><%= x.pps %></td>
+		<td><%= x.ts_percent %></td>
+		<td><%= x.ast_ratio %></td>
+		<td><%= x.to_ratio %></td>
+		<td><%= x.usg %></td>
+		<td><%= x.reb_rate %></td>
+		<td><%= x.per %></td>
+		<td><%= x.va %></td>
+		<td><%= x.ewa %></td>
+	<% end %>
+		</tr>
+</table>
+
+
+<table border="1" style="width:100%" align="center">
+		<tr>
+		<th>  </th>
+		<th> 2015 Salary </th>
+		<th> 2016 Salary </th>
+		<th> 2017 Salary </th>
+		<th> Guaranteed Salary </th>	
+		</tr>
+
+	<% @players.each do |d| %>	
+		<tr>
+		<td><%= link_to(d.name, player_path(d)) %></td>
+		<td><%= number_with_delimiter(d.sal_2015, :delimiter => ',') %></td>
+		<td><%= number_with_delimiter(d.sal_2016, :delimiter => ',') %></td>
+		<td><%= number_with_delimiter(d.sal_2017, :delimiter => ',') %></td>
+		<td><%= number_with_delimiter(d.sal_2015 + d.sal_2016 + d.sal_2017, :delimiter => ',') %></td>
+	<% end %>
+		</tr>
+</table>
+</div>
+</div>
+	
+
+
+
+
+</html>
+
+
+
+

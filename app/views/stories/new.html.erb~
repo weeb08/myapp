@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="main">
+	<h1><%=@story.name%></h1>
+	<p> ADD NEW STORY </p>
+</div>
+
+<div class="team-form">
+<%= form_for (@story) do |t| %>
+
+<div class="col-lg-4">
+
+  <br><%= t.label :name %><br>
+  <%= t.text_field :name %><br>
+
+  <br><%= t.label :thumburl %><br>
+  <%= t.text_field :thumburl %><br>
+
+  <br><%= t.label :summary %><br>
+  <%= t.text_field :summary %><br>
+
+
+
+
+  <br><%= t.submit %><br>
+</div>
+
+<%end%>
+</div>

@@ -1,0 +1,119 @@
+<html>
+<body>
+
+
+
+<div class="main">
+	<h1><%=@player.name%></h1>
+	<h3><%=@team.name%></h3>
+	<p><%=image_tag(@team.thumburl)%> </p>
+	<div class="button"><p><%= link_to 'Edit Player', :action => :edit %></p></div>
+</div>
+
+
+<div class="team-rank">
+
+<div class="col-lg-1"></div>
+<div class="col-lg-2">
+
+ <p><b>MPG = Minutes per Game</b></p>
+ <p><b>PPG = Points per Game</b></p>
+ <p><b>+/- = Plus/Minus</b>, averages the points scored versus points scored against for the entire season while that player was on the court</p>
+ <p><b>TS% = True Shooting Percentage</b>, what a player's shooting percentage would be if we acconted for free throws and 3-pointers.  TS% = Total Points / [(FGA + (0.44 x FTA)]</p>
+ <p><b>PER = Player Efficiency Rating</b>, overall rating of a player's per-minute statistical production.  The league average is 15.00 every season.</p>
+ <p><b>VA = Value Added</b>, estimated number of points a player adds to a team's season total above what a 'replacement player' would produce.  VA = ([Minutes * (PER - PRL)] / 67).  PRL (Position Replacement Level) = 11.5 for power forwards, 11.0 for point guards, 10.6 for centers, 10.5 for shooting guards and small forwards.</p>
+ <p><b>EWA = Estimated Wins Added</b>, Value Added divided by 30, giving the estimated number of wins a player adds to a team's season total above what a 'replacement player' would produce.</p>
+ <p><b>USG = Usage Rate</b>, the number of possessions a player uses per 40 minutes.  USG = {[FGA + FT Att. x 0.44) + (Ast x 0.33) + TO] x 40 x League Pace} divided by (Minutes x Team Pace)</p>
+
+</div>
+<div class="col-lg-1"></div>
+
+<div class="col-lg-7">
+	<table border="<table border="1" style="width:75%" table align="center">
+		<tr>
+		<th></th>
+		<th> 2015 Salary </th>
+		<th> 2016 Salary </th>
+		<th> 2017 Salary </th>	
+		</tr>
+
+
+		<tr>
+		<td><b><%=@player.name%></b></td>
+		<td><%= number_with_delimiter(@player.sal_2015, :delimiter => ',') %></td>
+		<td><%= number_with_delimiter(@player.sal_2016, :delimiter => ',') %></td>
+		<td><%= number_with_delimiter(@player.sal_2017, :delimiter => ',') %></td>
+		</tr>
+	</table>
+
+
+
+	<table border="<table border="1" style="width:100%" table align="center">
+
+		<tr>
+		<th>Age</th> 
+		<th>GP</th> 
+		<th>MPG</th> 
+		<th>PPG</th> 
+		<th>FG%</th> 
+		<th>3FG%</th> 
+		<th>FT%</th> 
+		<th>REB</th> 
+		<th>AST</th> 
+		<th>STL</th> 
+		</tr>
+
+		<tr>
+		<td><%=@player.age%></td> 
+		<td><%=@player.gp%></td> 
+		<td><%=@player.min%></td> 
+		<td><%=@player.pts%></td> 
+		<td><%=@player.fg_percent%></td> 
+		<td><%=@player.three_p_percent%></td> 
+		<td><%=@player.ft_percent%></td> 
+		<td><%=@player.reb%></td> 
+		<td><%=@player.ast%></td> 
+		<td><%=@player.stl%></td>
+		</tr> 
+	</table>
+
+	<table border="1" style="width:100%" table align="center">
+
+		<tr>
+		<th>PTS/36</th> 
+		<th>REB/36</th> 
+		<th>PPS</th> 
+		<th>+/-</th> 
+		<th>TS%</th> 
+		<th>AST ratio</th> 
+		<th>TO ratio</th> 
+		<th>USG</th> 
+		<th>REB rate</th> 
+		<th>PER</th> 
+		<th>VA</th> 
+		<th>EWA</th> 
+		</tr>
+
+		<tr>
+		<td><%=@player.pts_thirty_six%></td> 
+		<td><%=@player.reb_thirty_six%></td> 
+		<td><%=@player.pps%></td> 
+		<td><%=@player.plus_minus%></td> 
+		<td><%=@player.ts_percent%></td> 
+		<td><%=@player.ast_ratio%></td> 
+		<td><%=@player.to_ratio%></td> 
+		<td><%=@player.usg%></td> 
+		<td><%=@player.reb_rate%></td> 
+		<td><%=@player.per%></td> 
+		<td><%=@player.va%></td>
+		<td><%=@player.ewa%></td>
+		</tr> 
+	</table>
+</div>
+
+
+
+
+</div>
+</div>
+</div>

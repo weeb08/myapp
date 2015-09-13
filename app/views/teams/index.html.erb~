@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+
+<div class="main">
+	<h1>NBA Teams Info</h1>
+	<p>Click on each team logo to view Salary, Statistics and Advanced Analytics Information by Team</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+</div>
+
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+  <% @teams.each do |x| %>
+
+	<%=link_to(team_path(x.thumburl))%>
+</div>
+<div class="col-lg-2"></div>
+<%end%>
+
+	
+
+

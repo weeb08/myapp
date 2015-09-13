@@ -1,0 +1,50 @@
+// Place all the styles related to the Teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+text-align: center;
+font-family: arial;
+margin-top: 40px;
+font-size: 40px;
+}
+
+.header h1 {
+margin-left: auto;
+margin-right: auto;
+padding-top: 40px;
+}
+
+.header h2 {
+margin-left: auto;
+margin-right: auto;
+font-size: 25px;
+}
+
+
+
+.teams {
+margin-left: 0;
+margin-right: 0;
+padding: 0px 0px 0px 0px;
+}
+
+.teams img {
+display: block;
+padding: 20px 20px 20px 20px;
+float: left;
+position: relative;
+margin: 10px 0;
+border: 1px dotted black;
+}
+
+.container {
+padding: 100px 200px 100px 325px;
+border-top: 5px dotted black;
+}
+
+
+
+
+
+

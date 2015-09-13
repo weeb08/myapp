@@ -1,0 +1,8 @@
+class PagesController < ApplicationController
+	def home
+	@stories=Story.all
+	end
+
+	def link_to
+	end
+end

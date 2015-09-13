@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+
+
+<div class="main">
+	<h1>NBA Players Sortable Stats</h1>
+	<p>Compare Player Stats and Analytics</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+</div>
+
+
+<table border="1" style="width:50%">
+		<tr>
+		<th><%= sortable "name", "Name" %></th>
+		<th> Age </th>
+		<th> Min </th>
+		<th> PTS </th>
+		<th> REB </th>	
+		</tr>
+
+	<% @players.each do |d| %>	
+		<tr>
+		<td><%= link_to(d.name, player_path(d)) %></td>
+		<td><%= d.age %></td>
+		<td><%= d.min %></td>
+		<td><%= d.pts %></td>
+		<td><%= d.reb %></td>
+	<% end %>
+		</tr>
+

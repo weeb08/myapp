@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+
+
+
+
+<div class="main">
+	<h1>NBA Players Sortable Stats</h1>
+	<p>Compare Player Stats and Analytics</p>
+	
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+	<div class="button"><p><%= link_to 'Add New Player', :action => :new %></p></div>
+</div>
+
+<div class="team-rank">
+<div class="col-lg-1"></div>
+
+<div class="col-lg-2">
+ <p><b>MPG = Minutes per Game</b></p>
+ <p><b>PPG = Points per Game</b></p>
+ <p><b>+/- = Plus/Minus</b>, averages the points scored versus points scored against for the entire season while that player was on the court</p>
+ <p><b>TS% = True Shooting Percentage</b>, what a player's shooting percentage would be if we acconted for free throws and 3-pointers.  TS% = Total Points / [(FGA + (0.44 x FTA)]</p>
+ <p><b>PER = Player Efficiency Rating</b>, overall rating of a player's per-minute statistical production.  The league average is 15.00 every season.</p>
+ <p><b>VA = Value Added</b>, estimated number of points a player adds to a team's season total above what a 'replacement player' would produce.  VA = ([Minutes * (PER - PRL)] / 67).  PRL (Position Replacement Level) = 11.5 for power forwards, 11.0 for point guards, 10.6 for centers, 10.5 for shooting guards and small forwards.</p>
+ <p><b>EWA = Estimated Wins Added</b>, Value Added divided by 30, giving the estimated number of wins a player adds to a team's season total above what a 'replacement player' would produce.</p>
+ <p><b>USG = Usage Rate</b>, the number of possessions a player uses per 40 minutes.  USG = {[FGA + FT Att. x 0.44) + (Ast x 0.33) + TO] x 40 x League Pace} divided by (Minutes x Team Pace)</p>
+ 
+</div>
+
+<div class="col-lg-1"></div>
+
+ <div class="col-lg-7">
+  <table style="width:100%" table align="center">
+	<tr>
+		<th><b><%= sortable "name", "Name" %></b></th>
+		<th><%= sortable "min", "MPG" %></th>
+		<th><%= sortable "pts", "PPG" %></th>
+		<th><%= sortable "fg_percent", "FG%" %></th>
+		<th><%= sortable "three_p_percent", "3P%" %></th>
+		<th><%= sortable "ft_percent", "FT%" %></th>
+		<th><%= sortable "reb", "REB" %></th>
+		<th><%= sortable "ast", "AST" %></th>
+		<th><%= sortable "stl", "STL" %></th>
+		<th><%= sortable "blk", "BLK" %></th>
+		<th><%= sortable "plus_minus", "+/-" %></th>
+		<th><%= sortable "ts_percent", "TS%" %></th>
+		<th><%= sortable "per", "PER" %></th>
+		<th><%= sortable "va", "VA" %></th>	
+		<th><%= sortable "ewa", "EWA" %></th>
+		<th><%= sortable "usg", "USG" %></th>
+
+	</tr>
+
+	<% @players.each do |t|%>
+	
+	<tr>
+		<td><%= link_to(t.name, player_path(t)) %></td>
+		<td><%= t.min %></td>
+		<td><%= t.pts %></td>
+		<td><%= t.fg_percent %></td>
+		<td><%= t.three_p_percent %></td>
+		<td><%= t.ft_percent %></td>
+		<td><%= t.reb %></td>
+		<td><%= t.ast %></td>
+		<td><%= t.stl %></td>
+		<td><%= t.blk %></td>
+		<td><%= t.plus_minus %></td>
+		<td><%= t.ts_percent %></td>
+		<td><%= t.per %></td>
+		<td><%= t.va %></td>
+		<td><%= t.ewa %></td>
+		<td><%= t.usg %></td>
+	</tr>
+
+	<%end%>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="main">
+	<h1>NBA Teams Sortable Stats</h1>
+	<p>Compare Team Stats and Analytics</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+</div>
+
+<div class="team-rank">
+<div class="col-lg-1"></div>
+
+<div class="col-lg-2">
+
+ <p><b>PPG = Points per Game</b></p>
+ <p><b>PPGA = Points per Game Against</b></p>
+ <p><b>+/- = Plus/Minus</b>, averages the points scored versus points scored against for the entire season while that player was on the court</p>
+ <p><b>TS% = True Shooting Percentage</b>, what a player's shooting percentage would be if we acconted for free throws and 3-pointers.  TS% = Total Points / [(FGA + (0.44 x FTA)]</p>
+ 
+</div>
+
+<div class="col-lg-1"></div>
+
+
+ <div class="col-lg-7">
+  <table style="width:100%" table align="center">
+	<tr>
+		<th><%= sortable "name", "Team Name" %></th>
+		<th><%= sortable "ppg", "PPG" %></th>
+		<th><%= sortable "ppga", "PPGA" %></th>
+		<th><%= sortable "plus_minus", "+/-" %></th>
+		<th><%= sortable "fg_percent", "FG%" %></th>
+		<th><%= sortable "three_pfg_percent", "3PFG%" %></th>
+		<th><%= sortable "ts_percent", "TS%" %></th>
+		<th><%= sortable "ft_percent", "FT%" %></th>
+		<th><%= sortable "pps", "PPS" %></th>
+		<th><%= sortable "reb", "REB" %></th>
+		<th><%= sortable "ast", "AST" %></th>
+		<th><%= sortable "tov", "TOV" %></th>
+	</tr>
+
+	<% @teams.each do |t|%>
+	
+	<tr>
+		<td><%= link_to(t.name, team_path(t)) %></td>
+		<td><%= t.ppg %></td>
+		<td><%= t.ppga %></td>
+		<td><%= t.plus_minus %></td>
+		<td><%= t.fg_percent %></td>
+		<td><%= t.three_pfg_percent %></td>
+		<td><%= t.ts_percent %></td>
+		<td><%= t.ft_percent %></td>
+		<td><%= t.pps %></td>
+		<td><%= t.reb %></td>
+		<td><%= t.ast %></td>
+		<td><%= t.tov %></td>
+
+
+	<%end%>
+  </table>
+ </div>
+</div>
+
+
+

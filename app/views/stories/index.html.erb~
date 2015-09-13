@@ -1,0 +1,63 @@
+<! DOCTYPE html>
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="main">
+        <h1>Insider Basketball Rumors and Stories</h1>
+	<p>Check out all the latest insider NBA stories</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+	<div class="button"><p><%= link_to 'Add New Story', :action => :new %></p></div>
+</div>
+
+
+
+<div class="team-rank">
+<table id="t02" style="width:50%" align="center">
+
+ <tr>
+  <td><%= link_to(image_tag("http://img1.imagehousing.com/6/2c3135e357f538e4915a5a36d20f67a5.jpg"), story_path("4")) %></td>
+  <td><%= link_to(image_tag("http://img1.imagehousing.com/22/63c2f288332256b268583313070ec008.jpg"), story_path("3")) %></td>
+ </tr>
+
+ <tr>
+  <td><h2> Dallas implodes in playoffs, management will look to rebuild </h2></td>
+  <td><h2> Spurs looking to add Lamarcus Aldridge this offseason </h2></td>
+ </tr>
+
+</table>
+</div>
+
+
+<table id="t02" style="width:50%" align="center">
+
+ <tr>
+  <td> <%= link_to(image_tag("http://img1.imagehousing.com/49/247d780509134e7fd5503dc466577b86.jpg"), story_path("2")) %></td>
+  <td> <%= link_to(image_tag("http://img1.imagehousing.com/17/a81fd8a91a96e7d673f57c4ac06d4447.jpg"), story_path("1")) %></td>
+ </tr>
+
+ <tr>
+  <td><h2> After the Bulls were eliminated, is Coach Thibs headed out the door? </h2></td>
+  <td><h2>With With the emergence of Tristan Thompson, will Kevin Love re-sign in a lesser role? </h2></td>
+
+</table>
+
+
+
+
+

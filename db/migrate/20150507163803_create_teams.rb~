@@ -1,0 +1,35 @@
+class CreateTeams < ActiveRecord::Migration
+  def change
+    create_table :teams do |t|
+	t.string :name
+	t.string :thumburl
+	t.string :record
+	t.float :fg_percent
+	t.integer :fg_percent_rank
+	t.integer :three_pa_rank
+	t.float :three_pfg_percent
+	t.integer :three_pfg_percent_rank
+	t.integer :fta_rank
+	t.float :ft_percent
+	t.integer :ft_percent_rank
+	t.float :reb
+	t.integer :reb_rank
+	t.float :ast
+	t.integer :ast_rank
+	t.float :tov
+	t.integer :tov_rank
+	t.integer :stlblk_rank
+	t.float :ppg
+	t.integer :ppg_rank
+	t.float :ppga
+	t.integer :ppga_rank
+	t.float :plus_minus
+	t.integer :plus_minus_rank
+	t.float :pps
+	t.integer :pps_rank
+	t.float :ts_percent
+	t.integer :ts_percent_rank 
+      t.timestamps
+    end
+  end
+end

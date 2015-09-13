@@ -1,0 +1,18 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+background-image: url("http://7-themes.com/data_images/out/11/6803768-nba-logo-wallpaper.jpg");
+background-color: #cccccc;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<! DOCTYPE html>
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<h1>Basketball Analytics</h1>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+<html>
+<body>
+
+<div class="main">
+	<p>Your one stop shop for advanced analytics, salary information and insider NBA rumors</p>
+	<img src="http://img1.wikia.nocookie.net/__cb20131015203103/logopedia/images/d/df/121210092244-nba-logo-wordmark-275-wide.story-top.jpg">
+</div>
+
+
+<div class="filler"></div>
+<div class="center">
+ <div class="col-lg-3">
+  <h1>Advanced Analytics for each NBA Team</h1>
+   <p>See how each team stacks up against eachother in advanced metrics & each team's salary situation.</p>
+    <p style="text-align:center"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"></p>
+ </div>
+ <div class="col-lg-3">
+  <h1>Advanced Analytics for each NBA Player</h1>
+   <p>Compare players with advanced stats such as PER, Usage and Estimated Wins Added.</p>
+    <p style="text-align:center"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"></p>
+ </div>
+ <div class="col-lg-3">
+  <h1>Insider Trade & Free Agency Rumors</h1>
+   <p>Get insider access to all the latest free agency and trade rumors throughout the association.</p>
+    <p style="text-align:center"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"></p>
+ </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

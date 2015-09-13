@@ -1,0 +1,27 @@
+// Place all the styles related to the Teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+
+.teams {
+padding-top: 100px;
+}
+
+.teams img {
+display: block;
+padding-top: 100px;
+}
+
+.team-grid {
+padding-top: 100px;
+}
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20150526213625) do
+
+  create_table "pages", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.integer  "gp"
+    t.float    "min"
+    t.float    "fgm"
+    t.float    "fga"
+    t.float    "fg_percent"
+    t.float    "three_pm"
+    t.float    "three_pa"
+    t.float    "three_p_percent"
+    t.float    "ftm"
+    t.float    "fta"
+    t.float    "ft_percent"
+    t.float    "reb"
+    t.float    "ast"
+    t.float    "stl"
+    t.float    "blk"
+    t.float    "pts"
+    t.float    "pts_thirty_six"
+    t.float    "reb_thirty_six"
+    t.float    "pps"
+    t.float    "plus_minus"
+    t.integer  "sal_2015"
+    t.integer  "sal_2016"
+    t.integer  "sal_2017"
+    t.float    "ts_percent"
+    t.float    "ast_ratio"
+    t.float    "to_ratio"
+    t.float    "usg"
+    t.float    "reb_rate"
+    t.float    "per"
+    t.float    "va"
+    t.float    "ewa"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", force: true do |t|
+    t.string   "name"
+    t.string   "thumburl"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.string   "thumburl"
+    t.string   "win_loss"
+    t.float    "fg_percent"
+    t.integer  "fg_percent_rank"
+    t.integer  "three_pa_rank"
+    t.float    "three_pfg_percent"
+    t.integer  "three_pfg_percent_rank"
+    t.integer  "fta_rank"
+    t.float    "ft_percent"
+    t.integer  "ft_percent_rank"
+    t.float    "reb"
+    t.integer  "reb_rank"
+    t.float    "ast"
+    t.integer  "ast_rank"
+    t.float    "tov"
+    t.integer  "tov_rank"
+    t.integer  "stlblk_rank"
+    t.float    "ppg"
+    t.integer  "ppg_rank"
+    t.float    "ppga"
+    t.integer  "ppga_rank"
+    t.float    "plus_minus"
+    t.integer  "plus_minus_rank"
+    t.float    "pps"
+    t.integer  "pps_rank"
+    t.float    "ts_percent"
+    t.integer  "ts_percent_rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+end

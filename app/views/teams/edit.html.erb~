@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+
+
+<div class="navbar navbar-default">
+	<div class="top">
+		<div class="navbar-header">
+			<a>Basketball Analytics</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li class="active"><a href="/teams">Teams</a></li>
+			<li class="active"><a href="/stories">Rumors</a></li>
+			<li class="active"><a href="/teams/stats">League Stats</a></li>
+			<li class="active"><a href="/players/stats">Player Stats</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="main">
+	<h1><%=@team.name%></h1>
+	<p> EDIT TEAM INFO </p>
+	<%= image_tag(@team.thumburl) %>
+</div>
+
+<div class="team-form">
+<%= form_for (@team) do |t| %>
+
+<div class="col-lg-4">
+
+  <br><%= t.label :name %><br>
+  <%= t.text_field :name %><br>
+
+  <br><%= t.label :thumburl %><br>
+  <%= t.text_field :thumburl %><br>
+
+  <br><%= t.label :win_loss %><br>
+  <%= t.text_field :win_loss %><br>
+
+  <br><%= t.label :fg_percent %><br>
+  <%= t.number_field :fg_percent %><br>
+
+  <br><%= t.label :fg_percent_rank %><br>
+  <%= t.number_field :fg_percent_rank %><br>
+
+  <br><%= t.label :three_pa_rank %><br>
+  <%= t.number_field :three_pa_rank %><br>
+
+  <br><%= t.label :three_pfg_percent %><br>
+  <%= t.number_field :three_pfg_percent %><br>
+
+  <br><%= t.label :three_pfg_percent_rank %><br>
+  <%= t.number_field :three_pfg_percent_rank %><br>
+
+  <br><%= t.label :fta_rank %><br>
+  <%= t.number_field :fta_rank %><br>
+
+  <br><%= t.label :ft_percent %><br>
+  <%= t.number_field :ft_percent %><br>
+
+  <br><%= t.label :ft_percent_rank %><br>
+  <%= t.number_field :ft_percent_rank %><br>
+
+  <br><%= t.label :reb %><br>
+  <%= t.number_field :reb %><br>
+
+  <br><%= t.label :reb_rank %><br>
+  <%= t.number_field :reb_rank %><br>
+
+</div>
+<div class="col-lg-4">
+
+  <br><%= t.label :ast %><br>
+  <%= t.number_field :ast %><br>
+
+  <br><%= t.label :ast_rank %><br>
+  <%= t.number_field :ast_rank %><br>
+
+  <br><%= t.label :tov %><br>
+  <%= t.number_field :tov %><br>
+
+  <br><%= t.label :tov_rank %><br>
+  <%= t.number_field :tov_rank %><br>
+
+  <br><%= t.label :stlblk_rank %><br>
+  <%= t.number_field :stlblk_rank %><br>
+
+  <br><%= t.label :ppg %><br>
+  <%= t.number_field :ppg %><br>
+
+  <br><%= t.label :ppg_rank %><br>
+  <%= t.number_field :ppg_rank %><br>
+
+  <br><%= t.label :ppga %><br>
+  <%= t.number_field :ppga %><br>
+
+  <br><%= t.label :ppga_rank %><br>
+  <%= t.number_field :ppga_rank %><br>
+
+  <br><%= t.label :plus_minus %><br>
+  <%= t.number_field :plus_minus %><br>
+
+  <br><%= t.label :plus_minus_rank %><br>
+  <%= t.number_field :plus_minus_rank %><br>
+
+  <br><%= t.label :pps %><br>
+  <%= t.number_field :pps %><br>
+
+</div>
+<div class="col-lg-4">
+
+  <br><%= t.label :pps_rank %><br>
+  <%= t.number_field :pps_rank %><br>
+
+  <br><%= t.label :ts_percent %><br>
+  <%= t.number_field :ts_percent %><br>
+
+  <br><%= t.label :ts_percent_rank %><br>
+  <%= t.number_field :ts_percent_rank %><br>
+
+  <br><%= t.submit %><br>
+
+</div>
+
+</div>
+<%end%>

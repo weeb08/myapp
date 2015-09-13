@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+
+
+<div class="main">
+	<h1><%=@story.name%></h1>
+	<p> EDIT STORY INFO </p>
+</div>
+
+<div class="team-form">
+<%= form_for (@story) do |t| %>
+
+<div class="col-lg-4">
+
+  <br><%= t.label :name %><br>
+  <%= t.text_field :name %><br>
+
+  <br><%= t.label :thumburl %><br>
+  <%= t.text_field :thumburl %><br>
+
+  <br><%= t.label :summary %><br>
+  <%= t.text_field :summary %><br>
+
+
+
+
+  <br><%= t.submit %><br>
+</div>
+
+<%end%>
+</div>
