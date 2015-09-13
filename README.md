@@ -1,2 +1,2 @@
-# myapp
-rails
+First webapp from Logan Cutter
+
